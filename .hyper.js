@@ -146,7 +146,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-dracula"],
+  plugins: ["hyper-dracula", "hypercwd", "hyper-statusline"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -156,5 +156,11 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
+    "tab:new":"Ctrl+Shift+T",
+    "window:new":"Ctrl+Shift+N",
+    "pane:close":"Ctrl+Shift+W",
+    "editor:undo":"Ctrl+Shift+Z",
+    "editor:redo":"Ctrl+Shift+Y",
+    "editor:selectAll":"Ctrl+Shift+A"
   },
 };

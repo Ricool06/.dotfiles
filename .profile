@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -12,6 +13,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
+    # shellcheck source=/dev/null
 	. "$HOME/.bashrc"
     fi
 fi
@@ -26,9 +28,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# shellcheck source=/dev/null
+. "$HOME/.local/bin/traverse.sh"
+
 alias update-micro='( cd /tmp && curl https://getmic.ro | bash && sudo mv ./micro /usr/local/bin && sudo chown root:root /usr/local/bin/micro )'
 alias update-shell-profile='micro ~/.profile && source ~/.profile'
 alias list-default-packages="awk '{print $1}' ~/.default-packages"
 alias install-default-packages="xargs sudo apt install -y < ~/.default-packages"
+alias goto-repo='cd ~/dev/$(ls -1 ~/dev | fzf)'
 
 alias git-first-push='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
