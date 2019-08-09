@@ -1,4 +1,7 @@
 {
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Dracula"
+    "workbench.colorTheme": "Dracula",
+    "gitlens.heatmap.toggleMode": "window",
+    "gitlens.recentChanges.toggleMode": "window",
+    "workbench.tree.indent": 24
 }
